@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:meal_app/screens/filter_screen.dart';
 class MainDrawer extends StatelessWidget {
 
-  Widget buildListTile(String title, IconData iconTitle, Function tapHandler){
+  Widget buildListTile(String title, IconData iconTitle, VoidCallback tapHandler){
     return ListTile(
       leading: Icon(iconTitle, size: 26,),
-      title: Text(title,style:TextStyle(
+      title: Text(title,style:const TextStyle(
         fontSize: 24,
         fontFamily: 'RobotoCondensed',
         fontWeight: FontWeight.bold,

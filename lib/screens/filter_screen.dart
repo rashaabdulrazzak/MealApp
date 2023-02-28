@@ -7,7 +7,7 @@ class FiltersScreen extends StatefulWidget {
    final Function(Map<String, bool>)  saveFilter;
    final Map<String, bool> userFilters ;
 
-  FiltersScreen(this.userFilters, this.saveFilter);
+  FiltersScreen({required this.userFilters,required this.saveFilter});
 
 
   @override
@@ -24,10 +24,10 @@ class _FiltersScreenState extends State<FiltersScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    _GlutenFree = widget.userFilters['gluten'];
-    _LactoseFree = widget.userFilters['lactose'];
-    _Vegan = widget.userFilters['vegan'];
-    _Vegetarian = widget.userFilters['vegetarian'];
+    _GlutenFree = widget.userFilters['gluten']!;
+    _LactoseFree = widget.userFilters['lactose']!;
+    _Vegan = widget.userFilters['vegan']!;
+    _Vegetarian = widget.userFilters['vegetarian']!;
 
   }
   Widget buildSwitchListTile(
@@ -36,7 +36,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
         title: Text(title),
         value: currentValue,
         subtitle: Text(subtitle),
-        onChanged: updatedValue);
+        onChanged: updatedValue());
   }
 
   @override

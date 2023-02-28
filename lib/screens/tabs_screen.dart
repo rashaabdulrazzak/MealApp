@@ -16,7 +16,7 @@ class TabsScreen extends StatefulWidget {
 }
 
 class _TabsScreenState extends State<TabsScreen> {
-   List<Map<String,Object> > _pages ;
+   late List<Map<String,Object> > _pages ;
   int _selectedPageIndex = 0 ;
   void _selectedPage(int value) {
    setState(() {
@@ -41,8 +41,8 @@ class _TabsScreenState extends State<TabsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(_pages[_selectedPageIndex]['title']),),
-      body: _pages[_selectedPageIndex]['page'],
+      appBar: AppBar(title: Text(_pages[_selectedPageIndex]['title'].toString()),),
+      body:  _pages[_selectedPageIndex]['page'] as Widget,
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Theme.of(context).primaryColor,
         selectedItemColor: Theme.of(context).secondaryHeaderColor,
